@@ -1,0 +1,40 @@
+# application.yaml
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authdb
+    driver-class-name: org.postgresql.Driver
+    username: tmuser
+    password: tmpassword
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# JWT Configuration
+jwt:
+  secret: myJwtSecret
+  expiration: 3600
+
+# Eureka Configuration
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+
+# Security Configuration
+#security:
+#  enabled: true
+
+# Server Configuration
+server:
+  port: 8080
