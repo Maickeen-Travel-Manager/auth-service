@@ -18,6 +18,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+# Flyway Configuration
+flyway:
+  baseline-on-migrate: true
+  locations: classpath:db/migration
+
 # JWT Configuration
 jwt:
   secret: myJwtSecret
